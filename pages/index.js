@@ -1,12 +1,22 @@
 import { ToastContainer, toast } from "react-toastify";
-import { useState } from "react";
+import { useRouter } from "next/router";
 import { RippleButton } from "../component";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="wrapper">
       <p>Ripple Buttons with Toast</p>
-      <section style={{ display: "flex", flexDirection: "row" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 1,
+          flexDirection: "row",
+          height: "40%",
+          width: "100%",
+          flexWrap: "wrap",
+        }}
+      >
         <RippleButton
           style={{ backgroundColor: "grey" }}
           onclickButton={() => toast.info("Information Toast!")}
@@ -26,6 +36,22 @@ export default function Home() {
           style={{ backgroundColor: "rgb(131, 129, 2)" }}
           onclickButton={() => toast.warning("Warning Toast!")}
           title={"warning"}
+        />
+      </section>
+      <section
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+          height: "40%",
+          width: "100%",
+        }}
+      >
+        <RippleButton
+          style={{ alignSelf: "center" }}
+          onclickButton={() => router.push("/multiCarousel")}
+          title={"Next Page"}
         />
       </section>
 

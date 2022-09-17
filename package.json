@@ -1,13 +1,16 @@
 {
   "private": true,
+  "homepage": "https://Bhrugu14.github.io/my-demo",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "deploy": "gh-pages -d pages"
   },
   "dependencies": {
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
+    "gh-pages": "^4.0.0",
     "next": "latest",
     "next-page-transitions": "^1.0.0-beta.2",
     "react": "^17.0.2",
